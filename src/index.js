@@ -5,7 +5,7 @@ const { City } = require("./models/index");
 // require("dotenv").config();
 
 const { PORT } = require("./config/serverConfig");
-// const CityRepository = require("./repository/city-repository");
+const CityRepository = require("./repository/city-repository");
 
 const setupAndStartServer = async () => {
   const app = express();
@@ -23,8 +23,9 @@ const setupAndStartServer = async () => {
     //   name: "New Delhi",
     // });
 
-    // const repo = new CityRepository();
+    const repo = new CityRepository();
     // repo.createCity({ name: "pune" });
+    repo.deleteCity(1);
   });
 };
 
